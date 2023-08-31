@@ -80,3 +80,25 @@ def scan_xss(url):
 if __name__ == "__main__":
     url = input("Enter a URL to test for XSS:")
     print(scan_xss(url))
+
+#Paste the outputs here as comments in this script, clearling indicating which is positive detection and negative detection
+
+#positive detection
+
+#[+] Detected 1 forms on https://xss-game.appspot.com/level1/frame.
+#[+] XSS Detected on https://xss-game.appspot.com/level1/frame
+#[*] Form details:
+#{'action': '',
+ #'inputs': [{'name': 'query',
+  #           'type': 'text',
+   #          'value': '<script>alert("XSS Vulnerable!")</script>'},
+    #        {'name': None, 'type': 'submit'}],
+ #'method': 'get'}
+#True
+
+
+
+# negative detection
+
+#[+] Detected 1 forms on http://dvwa.local/login.php.
+#False
