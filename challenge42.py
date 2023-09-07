@@ -42,5 +42,12 @@ elif resp == '3':
     print("Ip Status: ", scanner[ip_addr].state())
     print(scanner[ip_addr].all_protocols())
     print("Open Ports: ", scanner[ip_addr]['tcp'].keys())
+elif resp == '4':
+    print("Nmap Version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, port_range, '-v -sS -sV -O -A')  # Comprehensive Scan
+    print(scanner.scaninfo())
+    print("IP Status: ", scanner[ip_addr].state())
+    print(scanner[ip_addr].all_protocols())
+    print("Open Ports: ", scanner[ip_addr]['tcp'].keys())   
 else:
     print("Please enter a valid option.")
